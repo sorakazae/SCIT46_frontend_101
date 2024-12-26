@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            text-align: center;
+            font-size : x-large;
+            font-weight: bolder;
+        }
+        .box{
+            text-align: center;
+            margin : 20px;
+            padding : 30px;
+            border : 1px solid black;
+        }
+        label{
+            font-size: large;
+            font-weight: bolder;
+        }
+        .line{
+            margin : 30px auto;
+        }
+        .line > label{
+            margin : 0px 50px;
+        }
+        .line > input{
+            margin : 0px 50px;
+        }
+        .button > input{
+            width : 100px;
+            margin : 50px 10px;
+        }
+
+
+        .impossible{
+            background-color: orangered;
+        }
+        .possible{
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            // let box = document.querySelectorAll('.inputBox');
+            // for(let e of box){
+            //     e.addEventListener('click', function(){
+            //         e.inner
+            //         e.classList.add('impossible');
+            //     });
+            // };
+        }
+        let idf = false, pwf = false;
+        function checkId(){
+            const id = document.querySelector('#id');
+            if(id.value.length < 8){
+                id.classList.remove('possible');
+                id.classList.add('impossible');
+                idf = false;
+            }else{
+                id.classList.remove('impossible');
+                id.classList.add('possible');
+                idf = true;
+            }
+        }
+        function checkPw(){
+            const pw = document.querySelector('#pw'); 
+            const pwc = document.querySelector('#pwc');
+            if(pw.value != pwc.value){
+                pw.classList.remove('possible');
+                pw.classList.add('impossible');
+                if(pwc.value!=""){
+                    pwc.classList.remove('possible');
+                    pwc.classList.add('impossible');
+                }
+                pwf = false;
+            }else{
+                pw.classList.remove('impossible');
+                pw.classList.add('possible');
+                pwc.classList.remove('impossible');
+                pwc.classList.add('possible');
+                pwf = true;
+            }
+        }
+        function checkAll(){
+            if(idf&&pwf){
+                return true;
+            }else{
+                if(!idf){
+                    alert('아이디는 8자 이상이어야 합니다');
+                }
+                if(!pwf){
+                    alert('비밀번호가 일치하지 않습니다');
+                }
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="title">
+        <p>회원가입</p>
+    </div>
+    <div>
+        <form action="" method="get" onsubmit="return checkAll();">
+            <div class="box">
+                <div class="line">
+                    <label for="id">아이디</label>
+                    <input type="text" id="id" name="id" oninput="checkId()" class="inputBox" placeholder="아이디는 8자 이상">
+                </div>
+                <div class="line">
+                    <label for="pw">비밀번호</label>
+                    <input type="password" id="pw" oninput="checkPw()" name="pwd" class="inputBox">
+                </div>
+                <div class="line">
+                    <label for="pwc">비밀번호 확인</label>
+                    <input type="password" id="pwc" oninput="checkPw()" class="inputBox">
+                </div>
+                <div class="button">
+                    <input type="submit" value="가입">
+                    <input type="reset" value="취소">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #field1{
+            width : 30%;
+        }
+        #field2{
+            width : 50%;
+        }
+        div.top{
+            margin-top : 20px;
+        }
+        div{
+            margin-bottom : 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="" method="get">
+        <fieldset id="field1">
+            <legend>회원정보</legend>
+            아이디:<br>
+            <input type="text" name="id"><br>
+            패스워드:<br>
+            <input type="password" name="password"><br>
+        </fieldset>
+        <fieldset id="field2">
+            <legend>과목</legend>
+            <div class="div">
+                <label for="HTML">HTML</label>
+                <input type="checkbox" name="subject">
+                <label for="CSS">CSS</label>
+                <input type="checkbox" name="subject">
+                <label for="JavaScript">JavaScript</label>
+                <input type="checkbox" name="subject" checked>
+            </div>
+            <div class="div top">
+                상<input type="radio" name="grade" value="상">
+                중<input type="radio" name="grade" value="중">
+                하<input type="radio" name="grade" value="하">
+            </div>
+        </fieldset>
+        <input type="submit" value="전송하기">
+        <input type="reset" value="취소하기">
+</form>
+</body>
+</html>

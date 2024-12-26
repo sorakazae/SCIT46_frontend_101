@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>route</title>
+</head>
+<body>
+    <h1>route</h1>
+    <!-- 
+        *web에서의 경로
+        protocol hosts      port path query string
+        https://www.naver.com:80/home/?q=123&page=1#search
+        Origin : protocol+host+port까지 모두 합친 URL
+        host : 사이트 도메인
+        port : 자원에 접근할 수 있는 포트번호
+        path : 사이트 내부 경로
+        query string : 요청의 key와 value값
+
+        *Directory에서의 경로
+        HTML파일에서 경로는 파일 시스템 내의 위치를 지정하여
+        웹 페이지에서 다른 파일이나 리소스를 참조하는데 사용.
+            상대경로(Relative Path)
+            절대굥로(Absolute Path)
+        /   (절대경로)
+        ./  현재디렉토리
+        ../ 상위디렉토리
+    -->
+    <ul>
+        상대경로
+        <!-- 동일한 폴더 내의 파일 참조 -->
+        <li>
+            <a href="./sameRoute.html">sameRoute.html</a>
+        </li>
+        <!-- 하위 폴더의 파일 참조 -->
+        <li>
+            <a href="./sub/subRoute.html">subRoute.html</a>
+        </li>
+        <!-- 상위 폴더의 파일 참조 -->
+        <li>
+            <a href="../home.html">home.html</a>
+        </li>
+    </ul>
+
+    <ul>
+        절대경로
+        <!-- 동일한 폴더 내의 파일 참조 -->
+        <li>
+            <a href="C:\vscode_workspace46\html\0.route\sameRoute.html">sameRoute.html(로컬)</a>
+            <a href="/html/0.route/sameRoute.html">sameRoute.html(서버)</a>
+        </li>
+        <!-- 하위 폴더의 파일 참조 -->
+        <li>
+            <a href="C:\vscode_workspace46\html\0.route\sub\subRoute.html">subRoute.html(로컬)</a>
+            <a href="/html/0.route/sub/subRoute.html">subRoute.html(서버)</a>
+        </li>
+        <!-- 상위 폴더의 파일 참조 -->
+        <li>
+            <a href="C:\vscode_workspace46\html\home.html">home.html(로컬)</a>
+            <a href="/html/0.route/sub/subRoute.html">subRoute.html(서버)</a>
+        </li>
+    </ul>
+</body>
+</html>

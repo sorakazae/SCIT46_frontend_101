@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="StyleSheet" href="./css_folder/style.css">
+    <style>
+        body{
+            background-color: beige;
+            font-size: 30px;
+        }
+        h1{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        * CSSOM (Cascading Style Sheet Object Model)
+        CSS는 HTML과는 다르게 객체로 직접 생성되지는 않지만,
+        브라우저에서 CSS를 해석하여 CSSOM이라는 객체 모델로 제공함,
+        이 객체 모델을 활용하여 스타일 시트를 동적으로 조작하고,
+        웹 페이지의 스타일을 제어할 수 있다.
+
+        선택자 {
+            스타일 속성 : 속성 값;
+        }
+
+        스타일을 적용하는 방법
+        1. 인라인 스타일 방식(직접 태그안에 style속성을 통해 변경)
+        2. <head>태그 안에 <style>태그를 만들고 그 안에 선택자로 접근하여 변경
+        3. 외부파일에서 선택자로 접근하여 변경
+    -->
+    <h1>내부 StyleSheet</h1>
+    <h2>외부 StyleSheet</h2>
+    <h3 style="color:red; font-size:40px;">인라인 StyleSheet</h3>
+</body>
+</html>

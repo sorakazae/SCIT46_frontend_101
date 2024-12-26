@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CheckWeight(name, height, weight){
+            this.userName = name;
+            this.userHeight = height;
+            this.userWeight = weight;
+            this.minWeight;
+            this.maxWeight;
+
+            this.getInfo = function(){
+                let str = '';
+                str += `이름: ${this.userName}, `;
+                str += `키: ${this.userHeight}, `;
+                str += `몸무게: ${this.userWeight}<br> `;
+                return str;
+            }
+            this.getResult = function(){
+                this.minWeight = (this.userHeight - 100) * 0.9 -5;
+                this.maxWeight = (this.userHeight - 100) * 0.9 +5;
+                if(this.userWeight >= this.minWeight
+                && this.userWeight <= this.maxWeight) {
+                    return "정상";
+                }else if(this.userWeight < this.minWeight){
+                    return "미달";
+                }else{
+                    return "초과";
+                }
+            }
+        }
+
+        let jang = new CheckWeight("장보리", 168, 62);
+        let park = new CheckWeight("박달재", 180, 88);
+
+        console.log(jang);
+        console.log(park);
+
+        document.write(jang.getInfo());
+        document.write(jang.getResult());
+
+        console.log('--- 내장 함수 ---');
+        let a = parseInt("5.12");       //5
+        console.log('parseInt: '+a);
+        let b = parseInt("15px");       //15
+        console.log('parseInt: '+b);
+        // 숫자가 아닌 값을 숫자로 변환했을 때 NaN이 되는지 확인
+        let nan = isNaN("53");          //false
+        console.log('isNaN: '+nan);
+        let nan2 = isNaN("5=3");        //true
+        console.log('isNaN2: '+nan2);
+
+        console.log(typeof parseFloat('3.14')); //number
+        console.log(typeof String(2000));       //string
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

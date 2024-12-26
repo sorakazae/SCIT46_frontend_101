@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+        /*
+            기본값 : 16px, 1em, 100%, 12pt
+            font-size : 텍스트 크기
+            font-weight : 글자의 두께 100~900, bold(700), bolder, lighter, normal(400)
+            font-family : 문자 스타일(normal, italic)
+            color : 글꼴의 색상을 지정(ex. #FFF000, rgb(255,0,0), rgba(255,0,0,1))
+            text-decoration : 텍스트의 줄 표시 / 제거
+            text-transform : 대소문자 변환
+            text-shadow : 텍스트 그림자 효과
+        */
+        body{
+            color: #000;
+            font-style: italic;
+        }
+        a{
+            color: black;
+        }
+        h1{
+            font-size: 20px;
+            font-weight: bolder;
+            text-decoration: line-through;
+        }
+        p.copy{
+            text-transform: capitalize;
+            text-align: center;
+            text-shadow: 1px 1px blue;
+        }
+        #pid{
+            font-family: "Nanum Gothic", sans-serif;
+        }
+        #webfront{
+            font-family: "Edu AU VIC WA NT Pre", cursive;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS 서식 관련 속성</h1>
+    <a href="">네이버 바로가기</a>
+    <p>
+        안녕하세요 홍길동입니다
+    </p>
+    <p class="copy">copyright all Reserved by abcde 2024</p>
+
+    <p id="pid">Web font - Nanum Gothic</p>
+    <p id="webfront">Web font - Hello Everyone</p>
+    
+</body>
+</html>

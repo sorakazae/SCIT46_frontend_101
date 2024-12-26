@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 한줄 주석
+        /*
+            여러줄 주석
+        */
+
+        // 변수
+        var a = 10;
+        a - 1.2;
+        var b = "hello";
+        let c = 20; //동일한 이름의 변수명 재선언 불가능
+        const d = true; //일반적인 상수
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+
+        //데이터 타입
+        /*
+            1. Number       //기본형
+            2. String       //기본형
+            3. Undefined    //기본형
+            4. Null         //참조형
+            5. Boolean      //기본형
+            6. Object       //참조형
+                객체, 함수, 배열 ..
+        */
+
+        //var는 중복 선언이 가능(전역변수 이런 것 상관 없이)
+        //var a = 1;
+        //var a = 2;
+        //let은 중복 선언 불가(일반적인 프로그래밍 언어의 변수처럼 동작)
+        let point = 123;
+        //let point = 2;
+        console.log(point);
+        console.log(typeof point);
+        point = -1.23;
+        console.log(typeof point);
+        point = "ㅎㅎㅎ";
+        console.log(typeof point);
+
+        // NaN: Not a Number
+        // NaN도 Number로 간주
+        point = 1*"A";
+        console.log(point);
+        console.log(typeof point);
+        console.log('NaN: '+typeof NaN);
+
+        // undefined : 문자열이 아닌 하나의 값
+        //            변수가 선언되었지만 아직 값이 할당되지 않았을 때의 기본 값.
+        let e;
+        console.log(e);
+
+        // null : 값이 없는 상태
+        //        변수나 객체 속성이 빈 값임을 명시적으로 나타낼 때 사용
+        e = null;
+        console.log(e);
+        console.log(typeof e);
+
+        console.log("---------------");
+        /*
+            undefined vs null
+            == 연산자 : null과 undefined는 동등 연산자(==)로 비교할때 같다고 평가됨
+                        두 값 모두 "비어있음"을 나타내기 때문
+            === 연산자 : 일치 연산자(===)는 값과 타입 모두를 비교 null과 undefined는 다른타입
+
+        */
+       console.log(null == undefined);  //true
+       console.log(null === undefined); //false
+       console.log(typeof undefined);
+       console.log(typeof null);
+
+        // 문자열
+        // 문자와 문자열을 JS에서는 구분하지 않는다
+        // '', ""
+        let str = 'Hello world';
+        let str2 = "Hello world";
+        console.log(str);
+        console.log(str2);
+
+        // Boolean
+            const result = true;
+            //result = false;   //error
+            console.log(result);
+       // Object : {name : value} 형태
+       let book = {
+        title:"책",
+        point: 123
+       };
+       console.log(book);
+       console.log(typeof book);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

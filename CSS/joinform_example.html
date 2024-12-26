@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="StyleSheet" href="./css_folder/joinform.css">
+</head>
+<body>
+    <div class="container">
+        <div><p>회원가입</p></div>
+        <form action="" method="post">
+            <div class="center">
+                <fieldset class="box">
+                    <legend>필수 정보</legend>
+                    <div class="section">
+                        <label for="id">아이디</label> 
+                        <div class="float-right">
+                            <input type="text" id="id" name="id">
+                        </div>
+                    </div>
+                    <div class="section">
+                        <label for="password">패스워드</label> 
+                        <div class="float-right">
+                            <input type="password" id="password" name="password">
+                        </div>
+                    </div>
+                    <div class="section">
+                        <label for="password2">패스워드 확인</label> 
+                        <div class="float-right">
+                            <input type="password" id="password2" name="password2">
+                        </div>
+                    </div>
+                    <div class="section">
+                        <label for="email">이메일</label> 
+                        <div class="float-right">
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="section">
+                        <label for="phone">핸드폰</label> 
+                        <div class="float-right">
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="center">
+                <fieldset class="box">
+                    <legend>선택정보</legend>
+                    <div class="section"> 
+                        <label for="date">생년월일</label> 
+                        <div class="float-right">
+                            <input type="date" id="date">
+                        </div> 
+                    </div>
+                    <div class="section"> 
+                        <label for="mbti">MBTI</label> 
+                        <div class="float-right">
+                            <select id="mbti" name="mbti">
+                                <option value="INTJ" selected>INTJ</option>
+                                <option value="INTP" selected>INTP</option>
+                                <option value="INFJ" selected>INFJ</option>
+                                <option value="INFP" selected>INFP</option>
+                                <option value="ISTJ" selected>ISTJ</option>
+                                <option value="ISTP" selected>ISTP</option>
+                                <option value="ISFJ" selected>ISFJ</option>
+                                <option value="ISFP" selected>ISFP</option>
+                                <option value="ENTJ" selected>ENTJ</option>
+                                <option value="ENTP" selected>ENTP</option>
+                                <option value="ENFJ" selected>ENFJ</option>
+                                <option value="ENFP" selected>ENFP</option>
+                                <option value="ESTJ" selected>ESTJ</option>
+                                <option value="ESTP" selected>ESTP</option>
+                                <option value="ESFJ" selected>ESFJ</option>
+                                <option value="ESFP" selected>ESFP</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <label>관심분야</label>
+                        <div class="float-right">
+                            <input type="checkbox" name="like" value="japanese">일본어
+                            <input type="checkbox" name="like" value="it">IT
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="center text-center">
+                <input type="submit" class="button"  value="가입">
+                <input type="reset" class="button" value="취소">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

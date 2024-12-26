@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function keyup(){
+            let input = document.querySelector('#text');
+            let text = document.querySelector('#contents');
+            str = '';
+            if(input.value.length>=10){
+                str += '10글자 이상입니다';
+                text.style.borderColor = 'red';
+            }else{
+                str += `${input.value.length}글자 입니다`;
+                text.style.borderColor = 'black';
+            }
+            text.innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="text" onkeyup="keyup()">
+    <span id="contents"></span>
+</body>
+</html>

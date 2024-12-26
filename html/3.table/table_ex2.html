@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td{
+            width : 50px;
+            height : 50px;
+        }
+        #box {
+            width : 100px;
+            height : 100px;
+            background-color: lightskyblue;
+        }
+        td.pink{
+            background-color : pink;
+        }
+        td.yellow{
+            background-color : yellow;
+        }
+        td.gray{
+            background-color: gray;
+        }
+        td.aquamarine{
+            background-color: aquamarine;
+        }
+        td.skyblue{
+            background-color: skyblue;
+        }
+        td.deeppink{
+            background-color: deeppink;
+        }
+        td.cyan{
+            background-color: cyan;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="pink" colspan="4">1</td>
+        </tr>
+        <tr>
+            <td id="box" rowspan="2" colspan="2">5</td>
+            <td class="yellow">7</td>
+            <td class="gray">8</td>
+        </tr>
+        <tr>
+            <td class="aquamarine">11</td>
+            <td class="skyblue">12</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="deeppink">13</td>
+            <td colspan="2" class="cyan">15</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+}
+.header > div{
+    text-align: center;
+}
+.header > div > img{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.content > .title{
+
+}
+.content > .info{
+
+}

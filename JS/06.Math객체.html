@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Math
+        console.log(`원주율: ${Math.PI}`);
+        console.log(`자연상수: ${Math.E}`);
+
+        // abs() -> 절대값
+        console.log(`abs(): ${Math.abs(-3)}`);          //3
+        console.log(`abs(): ${Math.abs("-2")}`);        //2
+        console.log(`abs(): ${Math.abs("Korea")}`);     //NaN 
+        console.log(`abs(): ${Math.abs(undefined)}`);   //NaN
+        console.log(`abs(): ${Math.abs(null)}`);        //0
+
+        // js에서 false로 처리되는 데이터 : 0, null, "", undefined
+        if(undefined){
+            console.log("참");
+        }else{
+            console.log("거짓");
+        }
+
+        // ceil() : 올림
+        console.log('----- ceil -----');
+        console.log(Math.ceil(0.95));       //1
+        console.log(Math.ceil(5.0001));     //6
+        console.log(Math.ceil(5));          //5
+        // js에는 0이 2종류가 있음, 0 / -0
+        console.log(Math.ceil(-0.95));      //-0
+        console.log(Math.ceil(-5.0001));    //-5
+
+        // floor() : 내림
+        console.log('----- ceil -----');
+        console.log(Math.floor(0.95));       //0
+        console.log(Math.floor(5.0001));     //5
+        console.log(Math.floor(5));          //5
+        console.log(Math.floor(-0.95));      //-1
+        console.log(Math.floor(-5.0001));    //-6
+
+        // round() : 반올림
+        console.log('----- ceil -----');
+        console.log(Math.round(0.95));       //1
+        console.log(Math.round(5.0001));     //5
+        console.log(Math.round(5));          //5
+        console.log(Math.round(-0.95));      //-1
+        console.log(Math.round(-5.0001));    //-5
+
+        console.log('----- 참고 -----');
+        console.log(0/0);                   //Nan
+        console.log(10/0);                  //Infinity
+        console.log(10/0.0);                //Infinity
+
+        console.log(0.1+0.2);
+        console.log(0.1+0.2==0.3);                    //false
+        console.log((0.1+0.2).toFixed(1));          
+        console.log(((0.1+0.2).toFixed(1))==0.3);     //true     
+
+        // max : 최대값
+        console.log('----- max -----');
+        console.log(Math.max(1,5,3));       //5
+        console.log(Math.max(-1,-5,-3));    //-1
+
+        // min : 최소값
+        console.log('----- min -----');
+        console.log(Math.min(1,5,3));       //1
+        console.log(Math.min(-1,-5,-3));    //-5
+
+        // pow : 거듭제곱
+        console.log('----- pow -----');
+        console.log(Math.pow(5,2));     //25
+        console.log(Math.pow(4,0.5));   //2
+        console.log(5**2);              //25
+        console.log((-5)**2);           //25 
+
+        // random : 0 ~ 1 미만의 난수 발생
+        console.log('----- random -----');
+        for(let i=0; i<5; i++){
+            console.log(Math.random());
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!-- ctrl + / : 주석 -->
+ <!-- HTML의 버전정보를 표시 -->
+<!DOCTYPE html>
+<!-- HTML 문서의 시작을 알리는 부분, 문서에서 사용할 언어 지정 -->
+<html lang="kr">
+    <!-- 문서의 정보(메타데이터 정의) -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 브라우저를 통해 실제 출력되는 내용 -->
+<body>
+    <button id="bt">네이버</button>
+    
+    <hr>
+    <ㅣ>
+        <li>
+            <a href="./0.route/route.html">경로</a>
+        </li>
+        <li>
+            <a href="./1.image/image.html">이미지</a>
+        </li>
+        <li>
+            <a href="./2.text/text1.html">문단, 텍스트 서식</a>
+        </li>
+        <li>
+            <a href="./2.text/text2.html">목록</a>
+        </li>
+    </ul>
+</body>
+<script type="text/javascript">
+    var bt = document.getElementById("bt");
+    bt.addEventListener('click',function(){
+        alert("clicked");
+    });
+</script>
+</html>

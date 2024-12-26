@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p { font-size : x-large; }
+        .highlight { background-color: yellow; }
+    </style>
+    <script>
+        window.onload = function(){
+            let hbtn = document.querySelector('#highlightButton');
+            hbtn.addEventListener('click', function(){
+                const pTag = document.querySelectorAll('.text');
+                for(let e of pTag){
+                    e.classList.add('highlight');
+                }
+            });
+            let cbtn = document.querySelector('#clearButton');
+            cbtn.addEventListener('click', function(){
+                const pTag = document.querySelectorAll('.text');
+                for(let e of pTag){
+                    e.classList.remove('highlight');
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>querySelectorAll 예제</h1>
+    <p class="text">첫번째 문장</p>
+    <p class="text">두번째 문장</p>
+    <p class="text">세번째 문장</p>
+    <div class="container">
+        <p>네번째 문장</p>
+    </div>
+    <button id="highlightButton">강조</button>
+    <button id="clearButton">강조 제거</button>
+</body>
+</html>

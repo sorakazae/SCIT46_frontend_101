@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Function
+            1. 함수의 문법
+             - 명명규칙 : 영문자, _, $ 사용가능 ,숫자와 특수문자는 사용불가
+             - 명명관례 : 동사로 시작, 두 개 이상의 단어는 카멜케이스
+             - function 함수이름 (arg1, arg2, arg3, ...){
+                //code
+             }
+            2. 리턴
+             - return을 만나면 함수의 실행을 중지하고 호출한 곳으로 값 반환
+             - return을 작성하지 않으면 undefined를 반환
+        */
+       function addFunction(a,b){
+            return a+b;
+       }
+
+       let result = addFunction(1,4);
+       console.log(result);
+
+       // 함수 표현식
+       let result2 = function(){
+            document.write('함수 표현식 <br>');
+            document.write('함수 표현식 <br>');
+       };
+       result2();
+
+       // 함수 호이스팅
+       // 함수 선언이 해당 코드가 실제로 실행되기 전에 끌어올려지는 현상
+       // 호이스팅은 선언만을 대상으로 하며, 할당은 런타임에 할당
+
+       // 1. 함수 선언
+       myFunc();         //등록된 함수를 사용하기에 선언보다 먼저 사용가능
+
+       function myFunc(){          //컴파일 시점에서 이미 등록이 되고 ↑
+          document.write('함수 선언<br>');
+          document.write('함수 정의문보다 호출문이 먼저 나와도 함수 호출');
+       }
+
+       // 2. 함수 표현식
+       //myFunc2();   //ReferenceError
+
+       let myFunc2 = function(){   //함수를 변수에 할당하기 때문에 런타임
+          document.write('함수 선언<br>');
+          document.write('함수 정의문보다 호출문이 먼저 나와도 함수 호출');
+       }
+
+       // var의 호이스팅
+       console.log(a);        //undefined(값이 없음)
+       var a = 10;
+       console.log(a);        //10
+
+       // let과 const 호이스팅
+       //console.log(b);        //ReferenceError
+       let b = 20;
+       console.log(b);
+
+       console.log('----- var -----');
+       // var = 지역변수, 전역변수 개념이 없음
+       //(불렀는데 없으면 undefined 전에 어디선가 쓴 적이 있으면 그냥 가져와줌)
+       if(true){
+          console.log(x);          //undefined
+          var x = 5;
+          console.log(x);          //5
+       }
+       console.log(x);             //5
+
+       // let
+       if(true){
+          console.log(y);          //ReferenceError
+          let y = 5;
+          console.log(y);          //5
+       }
+       console.log(y);             //ReferenceError
+
+       console.log('----- scope -----');
+       // 블럭 범위(Block Scope)와 함수 범위(Function Scope)
+       // var는 함수범위를 가지므로 함수 내 어디서든 접근 가능
+       // let, const는 블럭 범위를 가지므로 선언된 블럭 내에서만 접근 가능
+       // 함수범위는 조건문, 반복문 등과 상관없이 함수 단위로만 구분됨
+       function funcScope(){
+          if(true){
+               var e = 50;
+               let f = 60;
+               const g = 70;
+          }
+          console.log('var (함수 안):'+e);        //50
+          //console.log('let (블럭 밖):'+f);        //ReferenceError
+          //console.log('const (블럭 밖):'+g);      //ReferenceError
+       }
+       funcScope();
+       //console.log('var (함수 밖):'+e);           //ReferenceError
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

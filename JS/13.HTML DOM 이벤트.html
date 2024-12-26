@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            HTML 이벤트
+             - 마우스
+             - 웹페이지 로딩
+             - 이미지 로딩
+             - 폼 서브밋
+             - 속성 변경
+             - 키 스트로크
+        */
+        function upperCase(){
+            console.log('upperCase 실행');
+            let name = document.querySelector('#fname');
+            name.value = name.value.toUpperCase();
+        }
+
+        function btnClick(){
+            console.log('btnClick 실행');
+            document.getElementById('fname').value = '';
+        }
+
+        function focusOn(){
+            console.log('focusOn 실행');
+            document.querySelector('#fname').style.backgroundColor = 'red';
+        }
+        
+        function changeRed(){
+            console.log('changeRed 실행');
+            document.querySelector('#mouse').style.color = 'red';
+        }
+
+        function changeBlue(){
+            console.log('changeBlue 실행');
+            document.querySelector('#mouse').style.color = 'blue';
+        }
+
+        window.onload = function() {
+            let inputTag = document.querySelector('#inputTag');
+            inputTag.addEventListener('click', changeImg);
+
+            let i = 1;
+            function changeImg(){
+                let img = document.querySelector('#img');
+                let file = ["x72r0730bbc11.webp","howtofixbugby-v0-nn1cuqbce10e1.webp","istruthyfalse-v0-yffyvf6jpqzd1.webp"];
+                if(i>=file.length){
+                    i = 0;
+                }
+                img.src = '../html/1.image/file/'+file[i];
+                i++;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <label for="fname">이름 입력: </label>
+    <input type="text" name="fname" id="fname" 
+    onchange="upperCase()" onfocus="focusOn()" onfocusout="alert('focusout')">
+    <input type="button" value="초기화" onclick="btnClick()">
+    <br><br>
+    <div id="mouse" onmouseover="changeRed()" onmouseout="changeBlue()"
+        style="font-size: x-large">
+        마우스를 올려보세요...
+    </div>
+
+    <br><br>
+    <input type="button" value="변경" id="inputTag">
+    <br>
+    <img src="../html/1.image/file/x72r0730bbc11.webp" id="img">
+    
+</body>
+</html>

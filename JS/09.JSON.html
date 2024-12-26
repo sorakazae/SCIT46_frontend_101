@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            JSON (JavaScript Object Notation)
+            자바스크립트 객체 표기법을 기반으로 한 데이터 교환 형식
+            JSON은 인간이 읽기 쉬우면서도 기계가 쉽게 파싱하고
+            생성할 수 있는 형식으로, 웹 어플리케이션에서 서버와
+            클라이언트 간에 데이터를 교환하는데 자주 사용.
+
+            JSON.stringify : 자바스크립트 객체를 JSON 문자열로 변환
+            JSON.parse : JSON 문자열을 자바스크립트 객체로 변환
+
+            1. 텍스트 기반 포맷 : JSON은 사람이 읽고 쓰기 쉬운 텍스트 기반 형식
+                다른 데이터 형식(ex. XML)보다 가독성이 좋음.
+            2. 데이터 교환 : 주로 웹 서비스와 서버와 클라이언트 간 데이터 전송
+                용도로 사용.
+            3. 경량 : JSON은 데이터를 효율적으로 표현하며, 파일 크기가 작아
+                네트워크 전송에서 유리
+            4. 키-값 쌍 : JSON은 이름(키)과 값으로 구성된 쌍을 사용하여 데이터 표현
+
+            * JSON 형식 규칙
+             - 키(key)는 반드시 큰따옴표로 감싸져야 한다.
+             - 값(value) : 큰따옴표로 감싸지 않아도 되는 경우
+                ex. 숫자, Boolean, null 
+        */
+
+        //문자열
+        let obj = '{"id" : "aaa", "title" : "bbb"}';
+        console.log('--- 문자열 ---');
+        console.log(typeof obj);        //string
+        console.log(obj.id);            //undefined
+        console.log(obj["id"]);         //undefined
+
+        console.log('--- 문자열 => JSON 객체 ---');
+        let ob = JSON.parse(obj);       //문자열을 JSON객체로 변환
+        console.log(ob.id);
+        console.log(ob["id"]);
+
+        console.log('--- JSON 객체 => 문자열 ---');
+        let obj2 = {"id":"aaa","title":"bbb"};
+        let ob2 = JSON.stringify(obj2);
+        console.log(typeof ob2);
+        console.log(ob2);
+
+        // HTML문서가 모두 로딩이 되었을 때 스크립트를 실행하겠다
+        window.onload = function(){
+            let person = {
+                name: "John Doe",
+                age : 30,
+                isStudent : false,
+                courses : ["Math", "Science", "History"],
+                address : {
+                    street : "123 Main St",
+                    city : "Anytown",
+                    state : "CA"
+                }
+            };
+        
+
+        let jsonString = JSON.stringify(person);
+        console.log(jsonString);
+        console.log(typeof jsonString);
+
+        
+        let jsonString2 = `{"name":"John Doe","age":30,"isStudent":false,"courses":["Math","Science","History"],"address":{"street":"123 Main St","city":"Anytown","state":"CA"}}`
+        let person2 = JSON.parse(jsonString2);
+        console.log(person2);
+        console.log(typeof person2);
+        console.log(person2.name);
+        console.log(person2.courses[1]);
+            
+        let contents = document.querySelector('#contents');
+        let str = '';
+        str += `<table>`;
+        str += `<caption>학생 정보</caption>`;
+        str += `<tr>`;
+        str += `<th>이름</th>`;
+        str += `<td>${person2.name}</td>`;
+        str += `</tr>`;
+        str += `<tr>`;
+        str += `<th>나이</th>`;
+        str += `<td>${person2.age}</td>`;
+        str += `</tr>`;
+        str += `<tr>`;
+        str += `<th>과목</th>`;
+        str += `<td>${person2.courses[0]},${person2.courses[1]},${person2.courses[2]}</td>`;
+        str += `</tr>`;
+        str += `<tr>`;
+        str += `<th>주소</th>`;
+        str += `<td>${person2.address.street},${person2.address.city},${person2.address.state}</td>`;
+        str += `</tr>`;
+        str += `</table>`;
+        contents.innerHTML = str;
+        }
+    </script>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        caption{
+            font-size: x-large;
+        }
+        th{
+            width: 100px;
+            height: 80px;
+            text-align: center;
+            background-color: beige;
+        }
+        td{
+            width: 300px;
+            height: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="contents"></div>
+    <script>
+        
+    </script>
+</body>
+</html>

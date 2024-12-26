@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 5px solid red;
+            width: 400px;
+            height: 400px;
+        }
+        /* 자식 선택자 */
+        .box > div{
+            border: 5px solid blue;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 자식 선택자의 자손(들) */
+        .box > div div{
+            border: 5px solid green;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

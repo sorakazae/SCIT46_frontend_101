@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            배열(Array)
+            자바스크립트 배열은 순서가 있는 값들의 집합을 저장하는 객체
+            배열은 다양한 데이터타입의 값을 포함할 수 있으며,
+            각 값은 인덱스로 접근 가능.
+        */
+
+        let test = ["hello",1,true];
+        let fruits = ["Apple", "Banana","Cherry"];
+        let fruits2 = new Array("Apple","Banana","Cherry");
+
+        // 배열 요소 접근
+        console.log(fruits[0]);
+        console.log(fruits[1]);
+
+        // 배열 요소 수정
+        fruits[1] = "Blueberry";
+        console.log(fruits);
+
+        // 배열 길이
+        console.log(fruits.length);
+
+        // 배열 끝에 요소 추가(push)
+        // push 메서드는 배열의 끝에 하나 이상의 요소를 추가
+        fruits.push("Melon");
+        console.log(fruits);
+
+        // 배열 끝의 요소 제거(pop)
+        // pop 메서드는 배열의 끝에서 요소를 제거하고, 제거된 요소를 반환
+        let lastFruit = fruits.pop();
+        console.log(lastFruit);
+        console.log(fruits);
+
+        // 배열 합치기 (concat)
+        // concat 메서드는 두 개 이상의 배열을 합쳐 새로운 배열을 반환
+        let vegetables = ["Carrot", "Peas"];
+        let food = fruits.concat(vegetables);
+        console.log(food);
+
+        // 배열 정렬 (sort)
+        // sort 메서드는 배열의 요소를 정렬
+        fruits.sort();
+        console.log(fruits);
+
+        // 배열 요소 순서 뒤집기 (reverse)
+        fruits.reverse();
+        console.log(fruits);
+
+        // 배열 순회 (forEach)
+        // forEach 메서드는 배열의 각 요소에 대해 함수를 실행
+        //                요소, 첨자
+        fruits.forEach((fruits, index) => {     //익명함수(arrow 함수)
+            console.log(`${index+1}.${fruits}`);
+        });
+
+        // 2차원 배열
+        let arr = ["자바", "DB", ["HTML","CSS","JS"]];
+        console.log(arr[0]);
+        console.log(arr[2][0]);
+        for (let subject of arr[2]){
+            console.log(subject);
+        }
+
+        // 한번에 순회
+        for(let i=0; i<arr.length; i++){
+            if(Array.isArray(arr[i])){
+                for(let j=0; j<arr[i].length; j++){
+                    console.log(arr[i][j]);
+                }
+            }else{
+                console.log(arr[i]);
+            }
+        }
+
+        // 2번째 배열의 데이터를 꺼내는 방법(낱개)
+        let html = arr[2][0];
+        let css = arr[2][1];
+        let js = arr[2][2];
+
+        console.log(`0: ${html}, 1:${css}, 2:${js}`);
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

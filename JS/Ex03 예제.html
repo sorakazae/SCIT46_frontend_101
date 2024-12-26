@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.querySelector('#sel').addEventListener('change', function(){
+                let sel = this;
+                let img = document.querySelector('#selImg');
+                for (let i = 0; i < sel.length; i++){
+                    if(sel.options[i].selected == true){
+                        img.src = "../html/1.image/file/"+sel.options[i].value;
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <select id="sel">
+        <option value="x72r0730bbc11.webp">Boo</option>
+        <option value="howtofixbugby-v0-nn1cuqbce10e1.webp">Bug</option>
+        <option value="istruthyfalse-v0-yffyvf6jpqzd1.webp">Boolean</option>
+    </select>
+    <img src="../html/1.image/file/x72r0730bbc11.webp" id="selImg">
+</body>
+</html>
